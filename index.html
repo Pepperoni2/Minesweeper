@@ -1,16 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Minesweeper</title>
     <link rel="stylesheet" href="./styles.css">
-    <script src="./script.js"></script>
+    <link rel="icon" href="./assets/images/Mine_sprite.png">
 </head>
+
 <body>
-    <h1>Mines: <span id="mines-count">0</span></h1>
-    <div id="board"></div>
-    <br>
-    <button id="flag-button">🚩</button>
+    <div id="start-page">
+        <h1 class="game-title">Minesweeper</h1>
+        <div class="menu">
+            <div style="display: flex; flex-direction: row; gap: 30px;">
+                <button id="start-button-beginner" class="menu-button">Beginner</button>
+                <button id="start-button-advanced" class="menu-button">Advanced</button>
+            </div>
+            <button id="instructions-button" class="menu-button">How to play</button>
+        </div>
+        <div id="Instructions">
+            <h1>How to play</h1>
+            <p>
+                Minesweeper is a game where mines are hidden in a grid of squares. Safe squares have numbers telling you
+                how many mines touch the square. You can use the number clues to solve the game by opening all of the
+                safe squares. If you click on a mine you lose the game!
+
+                You open squares with the left mouse button and put flags on mines with the flag button below the board,
+                when pressed, click on the desired cell. When you open a square that does not touch any
+                mines, it will be
+                empty and the adjacent squares will automatically open in all directions until reaching squares that
+                contain numbers.
+            </p>
+            <button id="close-instructions" class="menu-button">Close</button>
+        </div>
+    </div>
+    <div id="gamePage">
+        <h1>Mines: <span id="mines-count">0</span></h1>
+        <div id="board"></div>
+        <br>
+        <button id="flag-button">🚩</button>
+        <div id="restart">
+            <button id="restart-btn"><img src="./assets/images/retry.svg" /></button>
+            <button id="backTo-btn"><img src="./assets/images/house.svg" /></button>
+        </div>
+    </div>
+    <script type="module" src="./script.js"></script>
 </body>
+
 </html>
