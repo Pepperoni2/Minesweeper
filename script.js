@@ -201,7 +201,7 @@ function setFlag() {
 */
 function clickTile() {
     // Prevents clicking if the game is over or the tile is already clicked
-    if (gameOver || this.classList.contains("tile-clicked")) {
+    if (gameOver || this.classList.contains("tile-clicked") || (this.innerText == "🚩" && !flagEnabled)) {
         return;
     }
 
